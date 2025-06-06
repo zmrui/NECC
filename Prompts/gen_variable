@@ -1,0 +1,128 @@
+typedef unsigned char 		u8;
+typedef unsigned short 		u16;
+typedef unsigned int 		u32;
+typedef unsigned long long  u64;
+typedef char 				s8;
+typedef short 				s16;
+typedef int 				s32;
+typedef __signed__ long long s64;
+
+#ifndef HZ
+#define HZ 100
+#endif
+
+#define USEC_PER_MSEC	1000UL
+#define USEC_PER_SEC	1000000UL
+#define USEC_PER_JIFFY	(USEC_PER_SEC / HZ)
+
+enum inet_csk_ack_state_t {
+	ICSK_ACK_SCHED	= 1,
+	ICSK_ACK_TIMER  = 2,
+	ICSK_ACK_PUSHED = 4,
+	ICSK_ACK_PUSHED2 = 8,
+	ICSK_ACK_NOW = 16	/* Send the next ACK immediately (once) */
+};
+
+enum tcp_ca_event {
+	CA_EVENT_TX_START = 0,
+	CA_EVENT_CWND_RESTART = 1,
+	CA_EVENT_COMPLETE_CWR = 2,
+	CA_EVENT_LOSS = 3,
+	CA_EVENT_ECN_NO_CE = 4,
+	CA_EVENT_ECN_IS_CE = 5,
+};
+enum sk_pacing {
+	SK_PACING_NONE		= 0,
+	SK_PACING_NEEDED	= 1,
+	SK_PACING_FQ		= 2,
+};
+
+struct ack_sample {
+	u32 pkts_acked;
+	s32 rtt_us;
+	u32 in_flight;
+};
+
+struct rate_sample {
+	u64  prior_mstamp; /* starting timestamp for interval */
+	u32  prior_delivered;	/* tp->delivered at "prior_mstamp" */
+	s32  delivered;		/* number of packets delivered over interval */
+	long interval_us;	/* time for tp->delivered to incr "delivered" */
+	u32 snd_interval_us;	/* snd interval for delivered packets */
+	u32 rcv_interval_us;	/* rcv interval for delivered packets */
+	long rtt_us;		/* RTT of last (S)ACKed packet (or -1) */
+	int  losses;		/* number of packets marked lost upon ACK */
+	u32  acked_sacked;	/* number of packets newly (S)ACKed upon ACK */
+	u32  prior_in_flight;	/* in flight before this ACK */
+	bool is_app_limited;	/* is sample from packet with bubble in pipe? */
+	bool is_retrans;	/* is sample from retransmission? */
+	bool is_ack_delayed;	/* is this (likely) a delayed ACK? */
+};
+
+struct sock_common {
+	unsigned char	skc_state;
+	u16		skc_num;
+};
+
+struct sock {
+	struct sock_common	__sk_common;
+#define sk_state		__sk_common.skc_state
+	unsigned long		sk_pacing_rate;
+	u32			sk_pacing_status; /* see enum sk_pacing */
+};
+
+struct inet_sock {
+	struct sock		sk;
+};
+
+struct inet_connection_sock {
+	struct inet_sock	  icsk_inet;
+	u8			  icsk_ca_state:6,
+				  icsk_ca_setsockopt:1,
+				  icsk_ca_dst_locked:1;
+	struct {
+		u8		  pending;
+	} icsk_ack;
+	u64			  icsk_ca_priv[104 / sizeof(u64)];
+};
+
+struct tcp_sock {
+	struct inet_connection_sock	inet_conn;
+
+	u32	rcv_nxt;    /* What we want to receive next 	*/
+	u32	snd_nxt;    /* Next sequence we send		*/
+	u32	snd_una;    /* First byte we want an ack for	*/
+	u32	window_clamp;   /* Maximal window to advertise		*/
+	u8	ecn_flags;  /* ECN status bits.			*/
+    u32 mss_cache;  /* Cached effective mss, not including SACKS */
+	u32 lost_out;	/* Lost packets			*/
+	u32 sacked_out;	/* SACK'd packets			*/
+	u32 packets_out;	/* Packets which are "in flight"	*/
+	u32 retrans_out;	/* Retransmitted packets out		*/
+	u32 prr_out;	/* Total number of pkts sent during Recovery. */
+	u32 lost; /* Total data packets lost incl. rexmits */
+	u32	srtt_us;	/* smoothed round trip time << 3 in usecs */
+	u32	mdev_us;	/* medium deviation			*/
+	u32	mdev_max_us;	/* maximal mdev for the last rtt period	*/
+	u32	rttvar_us;	/* smoothed mdev_max			*/
+	u32	rtt_seq;	/* sequence number to update rttvar	*/
+	u32	delivered;  /* Total data packets delivered incl. rexmits */
+	u32	delivered_ce;   /* Like the above but only ECE marked packets */
+	u32	snd_cwnd;   /* Sending congestion window		*/
+	u32	snd_cwnd_cnt;   /* Linear increase counter		*/
+	u32	snd_cwnd_clamp; /* Do not allow snd_cwnd to grow above this */
+	u32	snd_ssthresh;   /* Slow start size threshold		*/
+	u8	syn_data:1,	/* SYN includes data */
+		syn_fastopen:1,	/* SYN includes Fast Open option */
+		syn_fastopen_exp:1,/* SYN includes Fast Open exp. option */
+		syn_fastopen_ch:1, /* Active TFO re-enabling probe */
+		syn_data_acked:1,/* data in SYN is acked by SYN-ACK */
+		save_syn:1,	/* Save headers of SYN packet */
+		is_cwnd_limited:1,/* forward progress limited by snd_cwnd? */
+		syn_smc:1;	/* SYN includes SMC */
+	u32	max_packets_out;    /* max packets_out in last window */
+	u32	lsndtime;   /* timestamp of last sent data packet (for restart window) */
+	u32	prior_cwnd; /* cwnd right before starting loss recovery */
+	u64	tcp_mstamp;	/* most recent packet received/sent */
+	bool	is_mptcp;
+};
