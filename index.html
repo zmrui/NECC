@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NECC: Toward Non-Expert Customized Congestion Control</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Main container -->
+    <div class="container mx-auto max-w-4xl px-4 py-8 md:py-16">
+
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <p class="text-lg font-medium text-indigo-600 mb-2">Accepted by IEEE International Conference on Communications (ICC) 2025</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Toward Non-Expert Customized Congestion Control
+            </h1>
+            <p class="mt-4 text-xl text-gray-600">
+                NECC: A Framework for Non-Expert Customized Congestion Control
+            </p>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <!-- Abstract Section -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Abstract</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    General-purpose congestion control algorithms (CCAs) are designed to achieve general congestion control goals, but they may not meet the specific requirements of certain users. Customized CCAs can meet certain users' specific requirements; however, non-expert users often lack the expertise to implement them. In this paper, we present an exploratory non-expert customized CCA framework, named NECC, which enables non-expert users to easily model, implement, and deploy their customized CCAs by leveraging Large Language Models and the Berkeley Packet Filter (BPF) interface. To the best of our knowledge, we are the first to address the customized CCA implementation problem. Our evaluations using real-world CCAs show that the performance of NECC is very promising, and we discuss the insights that we find and possible future research directions.
+                </p>
+            </div>
+
+            <!-- GitHub Link and Description -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    This repository contains the source code, experiment scripts, and prompts for our paper "Toward Non-Expert Customized Congestion Control".
+                </p>
+                <a href="https://github.com/zmrui/NECC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors duration-300 shadow-sm">
+                    <!-- SVG for GitHub Icon -->
+                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+
+            <!-- Citation Section -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Citation</h2>
+                <blockquote class="text-gray-600 border-l-4 border-indigo-200 pl-4 italic">
+                    <p>
+                        Mingrui Zhang, Hamid Bagheri, and Lisong Xu, “Toward Non-Expert Customized Congestion Control”, in the IEEE International Conference on Communications (ICC), Montreal, Canada, June 2025, pp. 3288-3294.
+                    </p>
+                </blockquote>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-500">
+            <p>&copy; 2025 Mingrui Zhang.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
