@@ -4,6 +4,7 @@
 **Enables non-expert users to easily model, implement, and deploy customized Congestion Control Algorithms (CCAs)[1]**
 
 This repository contains the source code, experiment scripts, and prompts for the paper "Toward Non-Expert Customized Congestion Control" accepted by the 2025 IEEE International Conference on Communications (ICC).
+[Paper Link](p3288-zhang.pdf)
 
 [1]**customized Congestion Control Algorithms (CCAs)**: The CCAs that are designed to meet the specific requirements of certain users. They differ from general congestion control goals, such as fairly allocating bandwidth among competing flows, maximizing network utilization, and avoiding network congestion.
 
