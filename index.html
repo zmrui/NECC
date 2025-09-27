@@ -47,48 +47,120 @@
                 </p>
             </div>
             
+            <!-- Major Design Section -->
             <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Paper</h2>
-                <a href="https://github.com/zmrui/NECC/blob/35e81abfa14ad16dbcf92e9b3abd7a61ae56b92c/p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
-                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M12,19C10.9,19 10,18.1 10,17C10,15.9 10.9,15 12,15C13.1,15 14,15.9 14,17C14,18.1 13.1,19 12,19M12,12C10.9,12 10,11.1 10,10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,11.1 13.1,12 12,12M13,9V3.5L18.5,9H13Z" />
-                    </svg>
-                    View Paper
-                </a>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Major Design</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Non-Expert Customized CCA framework, NECC</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">Convert user's customized specific customized requirement to satisfying deployable congestion control code.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Prompt Design for Functional CCA Code :</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">1. Existing Congestion Control Code ( Cubic, Reno, … in this work)</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">2. References, e.g., structure definition, function declaration, etc.</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">3. Prompt: Modify the code to satisfy the new requirements</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">Reason: Many ICSE 24' works show LLMs' poor performance in class-level code generation</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Network Safety Deployment Requirement: </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">1. Reduce throughput in high loss rate network</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">2. Not exceed maximum throughput </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900">Evaluation Metrics: </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">1. Compiled</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">2. Passed BPF static analysis, registered to system</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">3. User's requirement. </p>
+                        <p class="text-lg text-gray-700 leading-relaxed">4. Safety requirement: Not exceed maximum throughput</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">5. Safety requirement: Reduce throughput at  high loss rate</p>
+                    </div>
+                    <div>
+                        <img src="tcpgpt-design.svg" alt="TCPGPT Design" class="w-half h-auto  mx-auto">
+                    </div>
+                </div>
             </div>
-            
-            <!-- GitHub Link and Description -->
+
+            <!-- Major Results Section -->
             <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Code</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    This repository contains the source code, experiment scripts, and prompts for our paper "Toward Non-Expert Customized Congestion Control".
-                </p>
-                <a href="https://github.com/zmrui/NECC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors duration-300 shadow-sm">
-                    <!-- SVG for GitHub Icon -->
-                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-                    </svg>
-                    View Code on GitHub
-                </a>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Major Results</h2>
+                <p class="text-lg text-gray-700 leading-relaxed">For CDF plots below, lines approaching bottom right corner are better.</p>
+                <div class="space-y-6 mt-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">RQ1: How to choose LLM parameters?</h3>
+                        <img src="11160790-fig-2-source-large.gif" alt="LLM Parameters" class="w-half sm:w-2/3 md:w-1/2 h-auto mb-2 mx-auto">
+                        <img src="11160790-table-2-source-small.gif" alt="LLM Parameters" class="w-half h-auto mb-2 mx-auto">
+                        <p class="text-lg text-gray-700 leading-relaxed">Zero temperature generates a pool of similar CCA programs</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">High temperature (T=1) generates more design mistake</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">Answer: Moderate temperature</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">Take away: to use the LLMs probabilistic nature</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">RQ2: How to design prompts?</h3>
+                        <img src="11160790-fig-3-source-small.gif" alt="prompts" class="w-half h-auto mb-2 mx-auto">
+                        <p class="text-lg text-gray-700 leading-relaxed">Chain-of-thought better than 0-shot</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">RQ3: How effective is feedback?</h3>
+                        <img src="11160790-fig-5-source-small.gif" alt="Feedback" class="w-half h-auto mb-2 mx-auto">
+                        <p class="text-lg text-gray-700 leading-relaxed">More efficient on compilation and BPF static analysis problems</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">LLM model selection (at submission time):</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">GPT-4o: strongest overall</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">Claude-3.5 Sonnet: does not always follow code-output instructions</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">GPT-4o mini: weaker than GPT-4o</p>
+                        <p class="text-lg text-gray-700 leading-relaxed">Suggestion for reproduction: use newer, up-to-date models, e.g., GPT-5, Claude-4</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Video Demo Section -->
             <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Slides</h2>
-                <a href="https://1drv.ms/p/c/0784c022e5be95a1/EXWORrNOP2NCnlTdhFCfcUkB2kyzc2DCrHx57vxoiZYdsg?e=SA15IP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-300 shadow-sm mt-4 sm:mt-0 sm:ml-4">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Video Demo</h2>
+                <video src="video1.mp4" controls class="w-full h-auto"></video>
+            </div>
+
+            <!-- Resources Section: Paper, Slides, Code side-by-side -->
+            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="https://github.com/zmrui/NECC/blob/35e81abfa14ad16dbcf92e9b3abd7a61ae56b92c/p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M12,19C10.9,19 10,18.1 10,17C10,15.9 10.9,15 12,15C13.1,15 14,15.9 14,17C14,18.1 13.1,19 12,19M12,12C10.9,12 10,11.1 10,10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,11.1 13.1,12 12,12M13,9V3.5L18.5,9H13Z" />
+                        </svg>
+                        View Paper
+                    </a>
+                    <a href="https://1drv.ms/p/c/0784c022e5be95a1/EXWORrNOP2NCnlTdhFCfcUkB2kyzc2DCrHx57vxoiZYdsg?e=SA15IP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-300 shadow-sm">
                         <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M13,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V9L13,2M11,18H7V16H11V18M13,14H7V12H13V14M13,10H7V8H13V10M12.5,9V3.5L18.5,9.5H13Z"></path>
                         </svg>
                         View Slides
-                </a>
+                    </a>
+                    <a href="https://github.com/zmrui/NECC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                        </svg>
+                        View Code on GitHub
+                    </a>
+                </div>
             </div>
 
             <!-- Citation Section -->
             <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Citation</h2>
-                <blockquote class="text-gray-600 border-l-4 border-indigo-200 pl-4 italic">
-                    <p>
-                        Mingrui Zhang, Hamid Bagheri, and Lisong Xu, “Toward Non-Expert Customized Congestion Control”, in the IEEE International Conference on Communications (ICC), Montreal, Canada, June 2025, pp. 3288-3294.
-                    </p>
-                </blockquote>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                If you find this work helpful, please consider citing our paper presented at IEEE ICC'25 <br>
+                </p>
+                <pre id="bibtex-entry" class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm"><code>@inproceedings{NECC_ICC_2025,
+  author = {Zhang, Mingrui and Bagheri, Hamid and Xu, Lisong},
+  title = {Toward Non-Expert Customized Congestion Control},
+  booktitle = {Proceedings of the 2025 IEEE International Conference on Communications},
+  year = {2025},
+  pages = {3606--3612},
+  doi = {10.1109/ICC52391.2025.11160790}
+}</code></pre>
+                <button id="copy-bibtex" class="mt-3 inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200">Copy BibTeX</button>
             </div>
         </main>
 
@@ -98,6 +170,33 @@
         </footer>
 
     </div>
+
+    <script>
+        (function() {
+            var copyButton = document.getElementById('copy-bibtex');
+            var bibtexPre = document.getElementById('bibtex-entry');
+            if (copyButton && bibtexPre) {
+                copyButton.addEventListener('click', function() {
+                    var text = bibtexPre.innerText;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(function() {
+                            copyButton.textContent = 'Copied!';
+                            setTimeout(function() { copyButton.textContent = 'Copy BibTeX'; }, 1500);
+                        });
+                    } else {
+                        var textarea = document.createElement('textarea');
+                        textarea.value = text;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        try { document.execCommand('copy'); } catch (e) {}
+                        document.body.removeChild(textarea);
+                        copyButton.textContent = 'Copied!';
+                        setTimeout(function() { copyButton.textContent = 'Copy BibTeX'; }, 1500);
+                    }
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>
