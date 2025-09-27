@@ -125,7 +125,7 @@
             <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
                 <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="https://github.com/zmrui/NECC/blob/35e81abfa14ad16dbcf92e9b3abd7a61ae56b92c/p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
+                    <a href="https://zmrui.github.io/papers/icc25-p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
                         <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M12,19C10.9,19 10,18.1 10,17C10,15.9 10.9,15 12,15C13.1,15 14,15.9 14,17C14,18.1 13.1,19 12,19M12,12C10.9,12 10,11.1 10,10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,11.1 13.1,12 12,12M13,9V3.5L18.5,9H13Z" />
                         </svg>
@@ -160,7 +160,6 @@
   pages = {3606--3612},
   doi = {10.1109/ICC52391.2025.11160790}
 }</code></pre>
-                <button id="copy-bibtex" class="mt-3 inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200">Copy BibTeX</button>
             </div>
         </main>
 
@@ -171,32 +170,7 @@
 
     </div>
 
-    <script>
-        (function() {
-            var copyButton = document.getElementById('copy-bibtex');
-            var bibtexPre = document.getElementById('bibtex-entry');
-            if (copyButton && bibtexPre) {
-                copyButton.addEventListener('click', function() {
-                    var text = bibtexPre.innerText;
-                    if (navigator.clipboard && navigator.clipboard.writeText) {
-                        navigator.clipboard.writeText(text).then(function() {
-                            copyButton.textContent = 'Copied!';
-                            setTimeout(function() { copyButton.textContent = 'Copy BibTeX'; }, 1500);
-                        });
-                    } else {
-                        var textarea = document.createElement('textarea');
-                        textarea.value = text;
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        try { document.execCommand('copy'); } catch (e) {}
-                        document.body.removeChild(textarea);
-                        copyButton.textContent = 'Copied!';
-                        setTimeout(function() { copyButton.textContent = 'Copy BibTeX'; }, 1500);
-                    }
-                });
-            }
-        })();
-    </script>
+    
 
 </body>
 </html>
