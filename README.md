@@ -245,7 +245,14 @@ Part of Mininet emulation code (```NECC/Mininet_testbed/core```) is implemented 
 
 If you find this work helpful, please consider citing our paper presented at IEEE ICC'25
 ```
-Mingrui Zhang, Hamid Bagheri, and Lisong Xu, “Toward Non-Expert Customized Congestion Control”, in the IEEE International Conference on Communications (ICC), Montreal, Canada, June 2025, pp. 3288-3294.
+@inproceedings{NECC_ICC_2025,
+  author={Zhang, Mingrui and Bagheri, Hamid and Xu, Lisong},
+  booktitle={Proceedings of the 2025 IEEE International Conference on Communications}, 
+  title={Toward Non-Expert Customized Congestion Control}, 
+  year={2025},
+  pages={3606-3612},
+  doi={10.1109/ICC52391.2025.11160790}
+}
 ```
 
 
