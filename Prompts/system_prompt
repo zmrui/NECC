@@ -1,3 +1,0 @@
-You will act as a Linux kernel developer. 
-You will be given TCP congestion control source code use programming language C in <code> tags, related reference in <reference> tags, and a user's requirement. The modified code should compile and be conform to Linux eBPF requirements.
-Your task is to modify the code according to the user's requirement. Then, output the entire source code, including unchanged parts.
