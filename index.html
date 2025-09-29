@@ -19,9 +19,98 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        
+        /* Smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Ensure mobile outline is above other content */
+        #mobile-outline {
+            z-index: 50;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Desktop Navigation (floating style) - moves right and disappears on smaller screens -->
+    <nav class="fixed top-4 right-4 bg-white border border-gray-300 rounded-lg shadow-lg p-4 max-w-xs z-50 hidden xl:block">
+        <ul class="space-y-2">
+            <li>
+                <a href="#abstract" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Abstract
+                </a>
+            </li>
+            <li>
+                <a href="#contribution" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Contribution
+                </a>
+            </li>
+            <li>
+                <a href="#problem-definition" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Problem Definition
+                </a>
+            </li>
+            <li>
+                <a href="#major-design" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Major Design
+                </a>
+            </li>
+            <li>
+                <a href="#major-results" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Major Results
+                </a>
+            </li>
+            <li>
+                <a href="#video-demo" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Video Demo
+                </a>
+            </li>
+            <li>
+                <a href="#resources" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Resources
+                </a>
+            </li>
+            <li>
+                <a href="#citation" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Citation
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Outline Toggle Button - now shows on lg screens and below -->
+    <button id="outline-toggle" class="xl:hidden fixed top-4 right-4 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- Mobile Outline Overlay -->
+    <div id="mobile-outline" class="xl:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+        <div class="absolute right-0 top-0 h-full w-80 max-w-sm bg-white shadow-xl">
+            <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900">Table of Contents</h3>
+                <button id="outline-close" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <ul class="space-y-2">
+                    <li><a href="#abstract" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Abstract</a></li>
+                    <li><a href="#contribution" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Contribution</a></li>
+                    <li><a href="#problem-definition" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Problem Definition</a></li>
+                    <li><a href="#major-design" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Major Design</a></li>
+                    <li><a href="#major-results" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Major Results</a></li>
+                    <li><a href="#video-demo" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Video Demo</a></li>
+                    <li><a href="#resources" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Resources</a></li>
+                    <li><a href="#citation" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Citation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <!-- Main container -->
     <div class="container mx-auto max-w-4xl px-4 py-8 md:py-16">
@@ -40,24 +129,24 @@
         <!-- Main Content Section -->
         <main>
             <!-- Abstract Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="abstract" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Abstract</h2>
                 <p class="text-lg text-gray-700 leading-relaxed">
                     General-purpose congestion control algorithms (CCAs) are designed to achieve general congestion control goals, but they may not meet the specific requirements of certain users. Customized CCAs can meet certain users' specific requirements; however, non-expert users often lack the expertise to implement them. In this paper, we present an exploratory non-expert customized CCA framework, named NECC, which enables non-expert users to easily model, implement, and deploy their customized CCAs by leveraging Large Language Models and the Berkeley Packet Filter (BPF) interface. To the best of our knowledge, we are the first to address the customized CCA implementation problem. Our evaluations using real-world CCAs show that the performance of NECC is very promising, and we discuss the insights that we find and possible future research directions.
                 </p>
-            </div>
+            </section>
             <!-- Contribution Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="contribution" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Contribution</h2>
                 <div>
                     <p class="text-lg text-gray-700 leading-relaxed">1. We propose implementing customized CCAs using the code refinement method instead of directly generating the code from scratch. </p>
                     <p class="text-lg text-gray-700 leading-relaxed">2. We propose several network domain-specific techniques to address the potentially erroneous outputs of an LLM.</p>
                     <p class="text-lg text-gray-700 leading-relaxed">3. We evaluate our proposed framework and these network domain-specific techniques for live streaming users using real-world CCAs, such as Linux Cubic and Reno. </p>
                 </div>
-            </div>
+            </section>
             
             <!-- Problem Definition Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="problem-definition" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Problem Definition</h2>
                 <div>
                     <h3 class="text-xl font-semibold text-gray-900">Customized Congestion Control: </h3>
@@ -69,10 +158,10 @@
                     <h3 class="text-xl font-semibold text-gray-900">Non-Expert: </h3>
                     <p class="text-lg text-gray-700 leading-relaxed">Users who may not possess necessary expertise to model, implement, and deploy the customized Congestion Control Algorithms (CCAs).</p>
                 </div>
-            </div>
+            </section>
 
             <!-- Major Design Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="major-design" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Major Design</h2>
                 <div class="space-y-6">
                     <div>
@@ -103,10 +192,10 @@
                         <img src="tcpgpt-design.svg" alt="TCPGPT Design" class="w-half h-auto  mx-auto">
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Major Results Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="major-results" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Major Results</h2>
                 <p class="text-lg text-gray-700 leading-relaxed">For CDF plots below, lines approaching bottom right corner are better.</p>
                 <div class="space-y-6 mt-4">
@@ -136,16 +225,16 @@
                         <p class="text-lg text-gray-700 leading-relaxed">GPT-4o mini: weaker than GPT-4o</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Video Demo Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="video-demo" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Video Demo</h2>
                 <video src="video1.mp4" controls class="w-full h-auto"></video>
-            </div>
+            </section>
 
             <!-- Resources Section: Paper, Slides, Code side-by-side -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+            <section id="resources" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
                 <div class="flex flex-col sm:flex-row gap-3">
                     <a href="https://zmrui.github.io/papers/icc25-p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
@@ -167,10 +256,10 @@
                         View Code on GitHub
                     </a>
                 </div>
-            </div>
+            </section>
 
             <!-- Citation Section -->
-            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+            <section id="citation" class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Citation</h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
                 If you find this work helpful, please consider citing our paper presented at IEEE ICC'25 <br>
@@ -183,7 +272,7 @@
   pages = {3606--3612},
   doi = {10.1109/ICC52391.2025.11160790}
 }</code></pre>
-            </div>
+            </section>
         </main>
 
         <!-- Footer -->
@@ -193,7 +282,98 @@
 
     </div>
 
-    
+    <script>
+        (() => {
+            document.addEventListener("DOMContentLoaded", function() {
+                // Handle anchor link clicks
+                const anchorLinks = document.querySelectorAll('a[href^="#"]');
+                anchorLinks.forEach((link) => {
+                    link.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute("href").substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            // Close mobile outline if open
+                            const mobileOutline2 = document.getElementById("mobile-outline");
+                            if (mobileOutline2) {
+                                mobileOutline2.classList.add("hidden");
+                            }
+                            
+                            // Smooth scroll to target
+                            const offsetTop = targetElement.offsetTop - 20;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: "smooth"
+                            });
+                            
+                            // Highlight target section briefly
+                            targetElement.style.transition = "background-color 0.3s ease";
+                            targetElement.style.backgroundColor = "#f0f9ff";
+                            setTimeout(() => {
+                                targetElement.style.backgroundColor = "";
+                            }, 2000);
+                        }
+                    });
+                });
+
+                // Mobile outline toggle functionality
+                const outlineToggle = document.getElementById("outline-toggle");
+                const outlineClose = document.getElementById("outline-close");
+                const mobileOutline = document.getElementById("mobile-outline");
+
+                if (outlineToggle && mobileOutline) {
+                    outlineToggle.addEventListener("click", function() {
+                        mobileOutline.classList.remove("hidden");
+                    });
+                }
+
+                if (outlineClose && mobileOutline) {
+                    outlineClose.addEventListener("click", function() {
+                        mobileOutline.classList.add("hidden");
+                    });
+                }
+
+                // Close mobile outline when clicking overlay
+                if (mobileOutline) {
+                    mobileOutline.addEventListener("click", function(e) {
+                        if (e.target === mobileOutline) {
+                            mobileOutline.classList.add("hidden");
+                        }
+                    });
+                }
+
+                // Update active section highlighting
+                function updateActiveSection() {
+                    const sections = document.querySelectorAll("section[id]");
+                    const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-outline a[href^="#"]');
+                    let currentSection = "";
+
+                    const scrollPosition = window.scrollY + 100;
+
+                    sections.forEach((section) => {
+                        const top = section.offsetTop;
+                        const height = section.offsetHeight;
+                        if (scrollPosition >= top && scrollPosition < top + height) {
+                            currentSection = section.getAttribute("id");
+                        }
+                    });
+
+                    navLinks.forEach((link) => {
+                        link.classList.remove("bg-blue-100", "text-blue-800", "font-semibold");
+                        link.classList.add("text-blue-600");
+                        if (link.getAttribute("href") === "#" + currentSection) {
+                            link.classList.remove("text-blue-600");
+                            link.classList.add("bg-blue-100", "text-blue-800", "font-semibold");
+                        }
+                    });
+                }
+
+                // Update active section on scroll
+                window.addEventListener("scroll", updateActiveSection);
+                updateActiveSection();
+            });
+        })();
+    </script>
 
 </body>
 </html>
