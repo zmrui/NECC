@@ -37,6 +37,11 @@
     <nav class="fixed top-4 right-4 bg-white border border-gray-300 rounded-lg shadow-lg p-4 max-w-xs z-50 hidden xl:block">
         <ul class="space-y-2">
             <li>
+                <a href="#resources" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
+                    Resources
+                </a>
+            </li>
+            <li>
                 <a href="#abstract" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
                     Abstract
                 </a>
@@ -67,11 +72,6 @@
                 </a>
             </li>
             <li>
-                <a href="#resources" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
-                    Resources
-                </a>
-            </li>
-            <li>
                 <a href="#citation" class="block text-sm text-blue-600 hover:text-blue-800 hover:bg-blue-50 px-2 py-1 rounded transition-colors duration-200">
                     Citation
                 </a>
@@ -99,13 +99,13 @@
             </div>
             <div class="p-6 overflow-y-auto">
                 <ul class="space-y-2">
+                    <li><a href="#resources" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Resources</a></li>
                     <li><a href="#abstract" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Abstract</a></li>
                     <li><a href="#contribution" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Contribution</a></li>
                     <li><a href="#problem-definition" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Problem Definition</a></li>
                     <li><a href="#major-design" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Major Design</a></li>
                     <li><a href="#major-results" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Major Results</a></li>
                     <li><a href="#video-demo" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Video Demo</a></li>
-                    <li><a href="#resources" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Resources</a></li>
                     <li><a href="#citation" class="block py-2 px-3 rounded-md text-blue-600 hover:bg-blue-50 transition-colors">Citation</a></li>
                 </ul>
             </div>
@@ -128,6 +128,30 @@
 
         <!-- Main Content Section -->
         <main>
+            <!-- Resources Section: Paper, Slides, Code side-by-side -->
+            <section id="resources" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="https://zmrui.github.io/papers/icc25-p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M12,19C10.9,19 10,18.1 10,17C10,15.9 10.9,15 12,15C13.1,15 14,15.9 14,17C14,18.1 13.1,19 12,19M12,12C10.9,12 10,11.1 10,10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,11.1 13.1,12 12,12M13,9V3.5L18.5,9H13Z" />
+                        </svg>
+                        View Paper
+                    </a>
+                    <a href="https://1drv.ms/p/c/0784c022e5be95a1/EXWORrNOP2NCnlTdhFCfcUkB2kyzc2DCrHx57vxoiZYdsg?e=SA15IP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M13,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V9L13,2M11,18H7V16H11V18M13,14H7V12H13V14M13,10H7V8H13V10M12.5,9V3.5L18.5,9.5H13Z"></path>
+                        </svg>
+                        View Slides
+                    </a>
+                    <a href="https://github.com/zmrui/NECC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors duration-300 shadow-sm">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                        </svg>
+                        View Code on GitHub
+                    </a>
+                </div>
+            </section>
             <!-- Abstract Section -->
             <section id="abstract" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Abstract</h2>
@@ -233,30 +257,6 @@
                 <video src="video1.mp4" controls class="w-full h-auto"></video>
             </section>
 
-            <!-- Resources Section: Paper, Slides, Code side-by-side -->
-            <section id="resources" class="bg-white p-8 rounded-xl shadow-md border border-gray-200 mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <a href="https://zmrui.github.io/papers/icc25-p3288-zhang.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm">
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M12,19C10.9,19 10,18.1 10,17C10,15.9 10.9,15 12,15C13.1,15 14,15.9 14,17C14,18.1 13.1,19 12,19M12,12C10.9,12 10,11.1 10,10C10,8.9 10.9,8 12,8C13.1,8 14,8.9 14,10C14,11.1 13.1,12 12,12M13,9V3.5L18.5,9H13Z" />
-                        </svg>
-                        View Paper
-                    </a>
-                    <a href="https://1drv.ms/p/c/0784c022e5be95a1/EXWORrNOP2NCnlTdhFCfcUkB2kyzc2DCrHx57vxoiZYdsg?e=SA15IP" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors duration-300 shadow-sm">
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M13,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V9L13,2M11,18H7V16H11V18M13,14H7V12H13V14M13,10H7V8H13V10M12.5,9V3.5L18.5,9.5H13Z"></path>
-                        </svg>
-                        View Slides
-                    </a>
-                    <a href="https://github.com/zmrui/NECC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors duration-300 shadow-sm">
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-                        </svg>
-                        View Code on GitHub
-                    </a>
-                </div>
-            </section>
 
             <!-- Citation Section -->
             <section id="citation" class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
