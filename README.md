@@ -5,9 +5,6 @@
   <a href="https://zmrui.github.io/NECC/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Intro%20Page-Visit-blue?style=for-the-badge" alt="Intro Page" />
   </a>
-<a href="https://zmrui.github.io/papers/icc25-p3288-zhang.pdf" target="_blank" rel="noopener noreferrer">
-	<img src="https://img.shields.io/badge/Paper-Link-blue?style=for-the-badge" alt="Paper Link" />
-  </a>
 </p>
 
 
