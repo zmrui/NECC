@@ -1,4 +1,4 @@
-# Toward Non-Expert Customized Congestion Control: Large Language Model-Assisted CCA Code Generation with eBPF Deployment
+# Toward Non-Expert Customized Congestion Control: Large Language Model (LLM)-Assisted CCA Code Generation with eBPF Deployment
 
 This repository contains the source code, experiment scripts, and prompts for the paper "Toward Non-Expert Customized Congestion Control" accepted by the 2025 IEEE International Conference on Communications (ICC).
 
