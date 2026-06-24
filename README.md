@@ -1,16 +1,8 @@
-# Toward Non-Expert Customized Congestion Control, IEEE ICC'25
-## NECC: Non-Expert Customized Congestion Control framework
-
-<p>
-  <a href="https://zmrui.github.io/NECC/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Intro%20Page-Visit-blue?style=for-the-badge" alt="Intro Page" />
-  </a>
-</p>
-
-
-**Enables non-expert users to easily model, implement, and deploy customized Congestion Control Algorithms (CCAs)[1]**
+# Toward Non-Expert Customized Congestion Control: Large Language Model-Assisted CCA Code Generation with eBPF Deployment
 
 This repository contains the source code, experiment scripts, and prompts for the paper "Toward Non-Expert Customized Congestion Control" accepted by the 2025 IEEE International Conference on Communications (ICC).
+
+**Enables non-expert users to easily model, implement, and deploy customized Congestion Control Algorithms (CCAs)[1]**
 
 [1]**customized Congestion Control Algorithms (CCAs)**: The CCAs that are designed to meet the specific requirements of certain users. They differ from general congestion control goals, such as fairly allocating bandwidth among competing flows, maximizing network utilization, and avoiding network congestion.
 
