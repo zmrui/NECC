@@ -2,9 +2,7 @@
 
 This repository contains the source code, experiment scripts, and prompts for the paper "Toward Non-Expert Customized Congestion Control" accepted by the 2025 IEEE International Conference on Communications (ICC).
 
-**Enables non-expert users to easily model, implement, and deploy customized Congestion Control Algorithms (CCAs)[1]**
-
-[1]**customized Congestion Control Algorithms (CCAs)**: The CCAs that are designed to meet the specific requirements of certain users. They differ from general congestion control goals, such as fairly allocating bandwidth among competing flows, maximizing network utilization, and avoiding network congestion.
+NECC is a Large Language Model (LLM)-assisted framework for congestion control algorithm (CCA) code generation with eBPF deployment. It refines existing Linux TCP congestion control implementations into customized, deployable CCA code using LLM-generated candidates, BPF checking, Mininet-based feedback, and network safety requirements.
 
 ## Outline
 
